@@ -1,0 +1,157 @@
+﻿<Window x:Class="GestionClubTenis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionClubTenis"
+        mc:Ignorable="d"
+        Title="GestionClub" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle = "None">
+    <Grid Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Image x:Name="Fond1" Margin="0,0,-8,-125" Source="orig_51870.jpg" Stretch="Fill" d:IsHidden="True"/>
+        <Image x:Name="Fond2" Margin="0,-52,0,-68" Source="1589403.jpg" Stretch="Fill" d:IsHidden="True" OpacityMask="White"/>
+        <Image x:Name="Fond3" Margin="-30,-52,-98,-125" Source="816149.jpg" Stretch="Fill"/>
+        <Grid x:Name="MenuPrincipal" Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center" d:IsHidden="True">
+            <TextBlock x:Name="TextPrincipal2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="560" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" Margin="1200,180,0,0" d:IsHidden="True" ><Run Background="White" Text="Gestion Club - Tenis"/></TextBlock>
+            <Button x:Name="MembreButton2" Content="Membres" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="ModuleMembre" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,320,0,0" />
+            <Button x:Name="CompetButton2" Content="Compétitions" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="ModuleCompet" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,420,0,0" />
+            <Button x:Name="StatButton2" Content="Statistiques" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="ModuleStats" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,520,0,0" />
+            <Button x:Name="AutreButton2" Content="Autres" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="ModuleAutre" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,620,0,0" />
+            <Button x:Name="AProposButton2" Content="À Propos" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="APropos" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,720,0,0" />
+            <Button x:Name="Close1" Content="Fermer le programme" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="Close" Visibility="Visible" RenderTransformOrigin="0.491,0.917" Margin="1200,860,0,0" />
+        </Grid>
+
+        <Grid x:Name="Module_Membre" Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center" d:IsHidden="True">
+
+            <Grid x:Name="ModifierMembre" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920" d:IsHidden="True">
+                <DataGrid x:Name="affichagesDatagrid" HorizontalAlignment="Left" Height="445" VerticalAlignment="Top" Width="800" Margin="960,130,0,0" FontFamily="Segoe UI Semibold" FontSize="14" Visibility="Visible"/>
+                <Button x:Name="precedent2" Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Click="Precedent_Click" Margin="960,710,0,0" Height="60" FontFamily="Segoe UI Semibold" FontSize="36" Background="White" Visibility="Visible"/>
+                <TextBlock x:Name="TexteBasAffichMembre" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="800" FontSize="30" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" Margin="960,630,0,0" ><Run Background="White" Text="Modifiez et supprimez directement sur le tableau"/></TextBlock>
+
+            </Grid>
+            <Grid x:Name="CreatMembre" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920" d:IsHidden="True">
+                <Grid x:Name="CreatMembreCommun" HorizontalAlignment="Left" Height="1080" Margin="45,104,-45,-104" VerticalAlignment="Top" Width="1920" d:IsHidden="True">
+                    <TextBox x:Name ="nombox" HorizontalAlignment="Left" Height="40" Margin="915,126,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="800"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                    <TextBox x:Name ="prenombox" HorizontalAlignment="Left" Height="40" Margin="915,166,0,0" TextWrapping="Wrap" Text="Prenom" VerticalAlignment="Top" Width="800"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                    <TextBox x:Name ="adressebox" HorizontalAlignment="Left" Height="41" Margin="915,206,0,0" TextWrapping="Wrap" Text="Adresse (_ pour espace)" VerticalAlignment="Top" Width="400"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                    <TextBox x:Name ="numerobox" HorizontalAlignment="Left" Height="40" Margin="915,246,0,0" TextWrapping="Wrap" Text="Téléphone" VerticalAlignment="Top" Width="800"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                    <TextBox x:Name ="jour" HorizontalAlignment="Left" Height="40" Margin="915,306,0,0" TextWrapping="Wrap" Text="Jour (XX)" VerticalAlignment="Top" Width="240"  FontSize="22" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible"/>
+                    <TextBox x:Name ="moisbox" HorizontalAlignment="Left" Height="40" Margin="1195,306,0,0" TextWrapping="Wrap" Text="Mois (XX)" VerticalAlignment="Top" Width="240"  FontSize="22" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible"/>
+                    <TextBox x:Name ="annee" HorizontalAlignment="Left" Height="40" Margin="1475,306,0,0" TextWrapping="Wrap" Text="Année (XXXX)" VerticalAlignment="Top" Width="240"  FontSize="22" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible"/>
+
+                    <Button x:Name="Femme" Content="Femme" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="1475,366,0,0" VerticalAlignment="Top" Width="160" BorderBrush="Black" Background="White" Click="Femme_Click" Visibility="Visible"/>
+                    <Button x:Name="Homme" Content="Homme" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="995,366,0,0" VerticalAlignment="Top" Width="160" BorderBrush="Black" Background="White" Click="Homme_Click" Visibility="Visible"/>
+
+                    <TextBlock x:Name="textHaut" HorizontalAlignment="Left" Margin="915,27,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="59" Width="800" Background="White" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Foreground="Black" />
+                    <Button x:Name="Valider" Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Click="EntrerNvMbre" Margin="915,606,0,0" Height="40" FontFamily="Segoe UI Semibold" FontSize="22" Background="White" Visibility="Visible"/>
+                    <TextBox x:Name ="Villebox" HorizontalAlignment="Left" Height="41" Margin="1315,206,0,0" TextWrapping="Wrap" Text="Ville" VerticalAlignment="Top" Width="400"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                </Grid>
+                <Grid x:Name="CreatMembreMembre" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920" d:IsHidden="True">
+                    <Button x:Name="Enfant" Content="Enfant" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="1280,461,0,0" VerticalAlignment="Top" Width="160" BorderBrush="Black" Background="White" Click="Enfant_Click" Visibility="Visible"/>
+
+                    <Button x:Name="payee" Content="Cotisation payée" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="960,581,0,0" VerticalAlignment="Top" Width="360" BorderBrush="Black" Background="White" Click="CotisationPayee" Visibility="Visible"/>
+                    <Button x:Name="nonpayee" Content="Cotisation non payée" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="1400,581,0,0" VerticalAlignment="Top" Width="360" BorderBrush="#FF0C0C0C" Background="White" Click="CotisationNonPayee" Visibility="Visible"/>
+
+                    <Button x:Name="loisirbox" Content="Formule Loisir" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="1400,521,0,0" VerticalAlignment="Top" Width="360" BorderBrush="Black" Background="White" Click="Loisir_Click" Visibility="Visible"/>
+                    <Button x:Name="competbox" Content="Formule Compétition" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="960,521,0,0" VerticalAlignment="Top" Width="360" BorderBrush="Black" Background="White" Click="Competition_Click" Visibility="Visible"/>
+                </Grid>
+                <Grid x:Name="CreatMembreSalar" HorizontalAlignment="Left" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Top" Width="1920" d:IsHidden="True">
+                    <Button x:Name="membresalar" Content="Membre" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="1400,521,0,0" VerticalAlignment="Top" Width="360" BorderBrush="Black" Background="White" Click="MembreSalar" Visibility="Visible"/>
+                    <Button x:Name="nonmembresalar" Content="Non Membre" FontSize="22" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="40" Margin="960,521,0,0" VerticalAlignment="Top" Width="360" BorderBrush="Black" Background="White" Click="NonMembreSalar" Visibility="Visible"/>
+                    <TextBox x:Name ="postbox" HorizontalAlignment="Left" Height="40" Margin="960,641,0,0" TextWrapping="Wrap" Text="Information Bancaire" VerticalAlignment="Top" Width="360"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                    <TextBox x:Name ="salairbox" HorizontalAlignment="Left" Height="40" Margin="1400,641,0,0" TextWrapping="Wrap" Text="Salaire" VerticalAlignment="Top" Width="360"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible" RenderTransformOrigin="0.736,-0.005"/>
+                </Grid>
+            </Grid>
+            <Grid x:Name="TextePrincipalMembre" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920">
+                <TextBlock x:Name="TextPrincipal" HorizontalAlignment="Left" Margin="1200,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="560" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" ><Run Background="White" Text="Module Membre"/></TextBlock>
+
+                <TextBlock x:Name="textHaut2CreationMembre" HorizontalAlignment="Left" Margin="1205,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="555" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" ><Run Background="White" Text="Création d'un nouveau membre"/></TextBlock>
+                <Button x:Name="SalarieButton" Content="Salarié" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" Margin="1500,410,0,0" VerticalAlignment="Top" Width="260" BorderBrush="Black" Background="White" Click="Salarie_Click" Visibility="Visible" />
+                <Button x:Name="MembreButton" Content="Membre" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" Margin="1200,410,0,0" VerticalAlignment="Top" Width="260" BorderBrush="Black" Background="White" Click="Membre_Click" Visibility="Visible"  />
+
+                <TextBlock x:Name="textHaut2AffichMembre" Text="Afficher - Modifier les membres" HorizontalAlignment="Left" Margin="1200,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="560" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" RenderTransformOrigin="0.5,0.5" />
+                <Button x:Name="SalarieAffichButton" Content="Salarié" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" Margin="1500,610,0,0" VerticalAlignment="Top" Width="260" BorderBrush="Black" Background="White" Click="SalarieAffiche_Click" Visibility="Visible" />
+                <Button x:Name="MembreAffichButton" Content="Membre" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" Margin="1200,610,0,0" VerticalAlignment="Top" Width="260" BorderBrush="Black" Background="White" Click="MembreAffiche_Click" Visibility="Visible" RenderTransformOrigin="1.056,0.625"  />
+
+
+                <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="1200,710,0,0" VerticalAlignment="Top" Width="560" Height="60" BorderBrush="Black" Background="White" FontFamily="Segoe UI Semibold" FontSize="36" Click="Retour_Click" Visibility="Visible"/>
+
+            </Grid>
+
+
+        </Grid>
+
+        <Grid x:Name="ModuleCompetition" Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid x:Name="MenuCompet" Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center" d:IsHidden="True">
+                <TextBlock x:Name="TextPrincipal3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="560" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" Margin="1200,180,0,0" ><Run Background="White" Text="Module Compétition"/></TextBlock>
+                <Button x:Name="CreerCompet" Content="Créer une compétition" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="CréerCompet_Click" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,320,0,0" />
+                <Button x:Name="CreerEquipe" Content="Créer une équipe" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="CréerEquipe_Click" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,420,0,0" />
+                <Button x:Name="AfficherCompet" Content="Afficher / Supprimer compétition" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="AfficherCompet_Click" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,520,0,0" />
+                <Button x:Name="AfficherEquipeButton" Content="Afficher / Supprimer équipe" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="AfficherEquipe" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,620,0,0" />
+                <Button x:Name="RetourCompet" Content="Retour" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="Retour_Click" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,820,0,0" />
+                <Button x:Name="RetourCompet_Copy" Content="Match" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="Match_Click" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,720,0,0" />
+            </Grid>
+            <Grid x:Name="modifEquipe" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920" d:IsHidden="True">
+                <DataGrid x:Name="affichagesDatagridCompet" HorizontalAlignment="Left" Height="445" VerticalAlignment="Top" Width="800" Margin="960,130,0,0" FontFamily="Segoe UI Semibold" FontSize="14" Visibility="Visible" d:IsHidden="True"/>
+                <Button x:Name="precedent4" Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Click="ModuleCompet" Margin="960,710,0,0" Height="60" FontFamily="Segoe UI Semibold" FontSize="36" Background="White" Visibility="Visible"/>
+                <TextBlock x:Name="TexteBasAffichEquipe" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="800" FontSize="30" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" Margin="960,630,0,0" ><Run Background="White" Text="Modifiez et supprimez directement sur le tableau"/></TextBlock>
+            </Grid>
+            <Grid x:Name="creerEquipe" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920" d:IsHidden="True">
+                <TextBox x:Name ="nomMembreEquipe" HorizontalAlignment="Left" Height="40" Margin="1000,277,0,0" TextWrapping="Wrap" Text="nom" VerticalAlignment="Top" Width="720"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                <TextBox x:Name ="prenomMembreEquipe" HorizontalAlignment="Left" Height="40" Margin="1000,317,0,0" TextWrapping="Wrap" Text="Prenom" VerticalAlignment="Top" Width="720"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                <TextBox x:Name ="nomEquipeBox" HorizontalAlignment="Left" Height="40" Margin="1000,357,0,0" TextWrapping="Wrap" Text="Nom de l'Equipe" VerticalAlignment="Top" Width="720"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible" />
+                <TextBlock x:Name="nomEquipeblock" HorizontalAlignment="Left" Margin="1000,176,0,0" TextWrapping="Wrap" Text="Insérez un joueur ou créez une équipe" VerticalAlignment="Top" Height="55" Width="720" Background="White" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Foreground="Black" />
+                <Button x:Name="InsererJoeur" Content="Insérer le joueur à l'équipe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="720" Click="EntrerNvEquipe" Margin="1000,415,0,0" Height="40" FontFamily="Segoe UI Semibold" FontSize="22" Background="#FFD6FFBC" Visibility="Visible" BorderBrush="Black"/>
+                <Button x:Name="precedent5" Content="Précedent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="725" Click="ModuleCompet" Margin="1000,610,0,0" Height="40" FontFamily="Segoe UI Semibold" FontSize="22" Background="White" Visibility="Visible"/>
+                <TextBlock x:Name="réussite" HorizontalAlignment="Left" Margin="1000,480,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="55" Width="720" Background="White" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Foreground="Black" />
+            </Grid>
+            <Grid x:Name="CreerCompetModule" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920" d:IsHidden="True">
+                <TextBox x:Name ="nomCompetbox" HorizontalAlignment="Left" Height="40" Margin="1000,277,0,0" TextWrapping="Wrap" Text="Nom de la compétition" VerticalAlignment="Top" Width="720"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                <TextBox x:Name ="capacitebox" HorizontalAlignment="Left" Height="40" Margin="1000,317,0,0" TextWrapping="Wrap" Text="Capacité de la compétition (chiffre)" VerticalAlignment="Top" Width="360"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                <TextBox x:Name ="ageMinbox" HorizontalAlignment="Left" Height="40" Margin="1360,317,0,0" TextWrapping="Wrap" Text="Age Minimum" VerticalAlignment="Top" Width="360"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible"/>
+                <TextBox x:Name ="nomEquipeBox1" HorizontalAlignment="Left" Height="40" Margin="1000,357,0,0" TextWrapping="Wrap" Text="Nom de l'Equipe" VerticalAlignment="Top" Width="720"  FontSize="22" FontFamily="Segoe UI Semibold" Visibility="Visible" />
+                <TextBlock x:Name="Creercompetblock" HorizontalAlignment="Left" Margin="1000,176,0,0" TextWrapping="Wrap" Text="Création d'une nouvelle compétition" VerticalAlignment="Top" Height="55" Width="720" Background="White" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Foreground="Black" />
+                <Button x:Name="CreerCompetButton1" Content="Créer une compétition" HorizontalAlignment="Left" VerticalAlignment="Top" Width="720" Click="CreerCompetClick" Margin="1000,480,0,0" Height="40" FontFamily="Segoe UI Semibold" FontSize="22" Background="#FFD6FFBC" Visibility="Visible" BorderBrush="Black"/>
+                <Button x:Name="precedent5_Copy1" Content="Précedent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="725" Click="ModuleCompet" Margin="1000,655,0,0" Height="40" FontFamily="Segoe UI Semibold" FontSize="22" Background="White" Visibility="Visible"/>
+                <TextBlock x:Name="reussite" HorizontalAlignment="Left" Margin="1000,575,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="50" Width="720" Background="White" FontSize="32" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Foreground="Black" />
+                <Button x:Name="BoutonR" Content="Regional" Click="regionalClick" HorizontalAlignment="Left" Height="40" Margin="1060,420,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semibold" FontSize="16" Background="White" BorderBrush="Black"/>
+                <Button x:Name="BoutonD" Content="Departemental" Click="departementalClick" HorizontalAlignment="Left" Height="40" Margin="1505,420,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semibold" FontSize="16" Background="White" BorderBrush="Black"/>
+                <Button x:Name="BoutonN" Content="Natioal" Click="nationalClick" HorizontalAlignment="Left" Height="40" Margin="1280,420,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semibold" FontSize="16" Background="White" BorderBrush="Black"/>
+            </Grid>
+            <Grid x:Name="gridMatch" HorizontalAlignment="Left" Height="1070" Margin="10,0,0,0" VerticalAlignment="Top" Width="1910">
+                <TextBlock x:Name="MatchString" HorizontalAlignment="Left" Margin="1010,680,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Background="White" Height="60" Width="725" FontSize="22" FontFamily="Segoe UI Semilight"/>
+
+                <Button x:Name="Valider213" Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="725" Click="MatchValider_Click" Margin="1000,610,0,0" Height="40" FontFamily="Segoe UI Semibold" FontSize="22" Background="White" Visibility="Visible"/>
+                <DataGrid x:Name="matchs" HorizontalAlignment="Left" Height="445" VerticalAlignment="Top" Width="800" Margin="960,130,0,0" FontFamily="Segoe UI Semibold" FontSize="14" Visibility="Visible"/>
+                <Button x:Name="precedent3" Content="Précedent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="725" Click="ModuleCompet" Margin="1000,780,0,0" Height="40" FontFamily="Segoe UI Semibold" FontSize="22" Background="White" Visibility="Visible"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid x:Name="Statistiques" Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center" d:IsHidden="True">
+            <Button x:Name="Retour3" Content="Retour" HorizontalAlignment="Left" Margin="960,660,0,0" VerticalAlignment="Top" Width="880" Height="55" BorderBrush="Black" Background="White" FontFamily="Segoe UI Semibold" FontSize="36" Click="Retour_Click" Visibility="Visible"/>
+            <DataGrid x:Name="StatDataGrid" HorizontalAlignment="Left" Height="410" Margin="960,190,0,0" VerticalAlignment="Top" Width="880"/>
+        </Grid>
+        <Grid x:Name="ModuleAutres" Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center" d:IsHidden="True">
+            <Grid x:Name="MenuAutres" Height="1080" Margin="0,0,0,0" Width="1920" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="560" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" Margin="1200,180,0,0" ><Run Background="White" Text="Autres"/></TextBlock>
+                <Button Content="Fond d'écran 1" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="AfficherAdministration" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,320,0,0" />
+                <Button Content="Fond d'écran 2" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="AfficherEntraineurs" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,420,0,0" />
+                <Button Content="Fond d'écran 3" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="AfficherEvents" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,520,0,0" />
+                <Button Content="Afficher stages" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="Stage" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,620,0,0" />
+                <Button Content="Retour" FontSize="36" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" Click="Retour_Click" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Margin="1200,720,0,0" />
+            </Grid>
+            <Grid x:Name="dataGridAutre" HorizontalAlignment="Center" Height="1080" Margin="0,10,0,-10" VerticalAlignment="Center" Width="1920" d:IsHidden="True">
+                <DataGrid x:Name="dataAutres" HorizontalAlignment="Left" Height="445" VerticalAlignment="Top" Width="800" Margin="960,130,0,0" FontFamily="Segoe UI Semibold" FontSize="14" Visibility="Visible"/>
+                <Button x:Name="precedent1" Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Click="ModuleAutre" Margin="960,710,0,0" Height="60" FontFamily="Segoe UI Semibold" FontSize="36" Background="White" Visibility="Visible"/>
+                <TextBlock x:Name="TexteBasAffichEquipe1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="800" FontSize="30" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" Margin="960,630,0,0" ><Run Background="White" Text="Modifiez et supprimez directement sur le tableau"/></TextBlock>
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="AProposGrid" HorizontalAlignment="Left" Height="1060" Margin="10,10,0,0" VerticalAlignment="Top" Width="1900" d:IsHidden="True">
+            <Button Content="Ouvrir le rapport" HorizontalAlignment="Left" Height="60" Margin="1190,350,0,0" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" FontFamily="Segoe UI Semibold" FontSize="36" Click="Rapport"/>
+            <Button Content="Ouvrir l'UML" HorizontalAlignment="Left" Height="60" Margin="1190,530,0,0" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" FontFamily="Segoe UI Semibold" FontSize="36" Click="UML"/>
+            <Button Content="Retour" HorizontalAlignment="Left" Height="60" Margin="1190,710,0,0" VerticalAlignment="Top" Width="560" BorderBrush="Black" Background="White" FontFamily="Segoe UI Semibold" FontSize="36" Click="Retour_Click"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="560" FontSize="36" FontFamily="Segoe UI Semibold" TextAlignment="Center" Visibility="Visible" Background="White" Margin="1190,170,0,0" ><Run Background="White" Text="Gestion Club - Tenis"/></TextBlock>
+        </Grid>
+        </Grid>
+</Window>

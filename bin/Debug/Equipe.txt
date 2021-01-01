@@ -1,0 +1,6 @@
+WeshAlors DesBrosses Jean 17/01/2001 Enfant AucuneIdée Paris 0612345678 Loisir True True 2 1 0 0
+Coolos Turcas Guillaume 25/05/1999 Homme 106_Rue_Du_Ranelagh Paris 0667167072 Compétition True True 0 0 1 0
+Equipe1 Noah Yanick 17/01/1980 Homme Suisse Suisse 0687654321 Compétition True False 1 1 0 0
+Equipe1 Arthur Ye 18/04/1983 Femme JaponLand JaPonCity 0687654334 Compétition False False 1 1 0 0
+Equipe2 Arthur Qaw 18/12/2013 Homme JaponLande JaPonCity 0687654331 Loisir True False 0 0 1 0
+Equipe2 Usar Paul 01/11/2007 Enfant 12_Rue_2 Lyon 0667122112 Loisir False False 0 0 1 0
